@@ -23,7 +23,7 @@ data "vsphere_virtual_machine" "template" {
 }
 
 resource "vsphere_virtual_machine" "vm" {
-  name             = "fkl-tf-jenkins"
+  name             = "fkl-tf-j01"
   resource_pool_id = "${data.vsphere_resource_pool.pool.id}"
   datastore_id     = "${data.vsphere_datastore.datastore.id}"
   folder            = "Linux"
@@ -72,7 +72,7 @@ resource "vsphere_virtual_machine" "vm" {
 
     customize {
       linux_options {
-        host_name = "fkl-tf-jenkins"
+        host_name = "fkl-tf-j01"
         domain    = "fkl-lab.int"
       }
       network_interface {}
