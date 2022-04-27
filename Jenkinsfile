@@ -3,19 +3,22 @@ pipeline {
   stages {
     stage('init') {
       steps {
-        sh 'terraform init'
+        sh '''cd tf-ubuntu-vm
+terraform init'''
       }
     }
 
     stage('plan') {
       steps {
-        sh 'terraform plan'
+        sh '''cd tf-ubuntu-vm
+terraform plan'''
       }
     }
 
     stage('apply') {
       steps {
-        sh 'terraform apply'
+        sh '''cd tf-ubuntu-vm
+terraform apply -auto-approve'''
       }
     }
 
