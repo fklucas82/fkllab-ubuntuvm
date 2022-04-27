@@ -10,13 +10,15 @@ terraform init'''
 
     stage('plan') {
       steps {
-        sh 'terraform plan'
+        sh '''cd tf-ubuntu-vm
+terraform plan'''
       }
     }
 
     stage('apply') {
       steps {
-        sh 'terraform apply'
+        sh '''cd tf-ubuntu-vm
+terraform apply'''
       }
     }
 
