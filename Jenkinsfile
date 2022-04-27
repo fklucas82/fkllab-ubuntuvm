@@ -18,7 +18,7 @@ terraform plan'''
     stage('apply') {
       steps {
         sh '''cd tf-ubuntu-vm
-terraform apply'''
+terraform apply -autoapprove'''
       }
     }
 
