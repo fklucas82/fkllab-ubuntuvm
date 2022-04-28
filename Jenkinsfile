@@ -1,7 +1,7 @@
 pipeline {
   agent any
   environment {
-      vsphere_user     = credentials('administrator@fkllab.local')
+      vsphere_user     = credentials('lab local vcenter	')
   }
   stages {
     stage('init') {
