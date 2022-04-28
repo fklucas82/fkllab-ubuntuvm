@@ -1,7 +1,8 @@
 pipeline {
   agent any
   environment {
-      vsphere_user     = credentials('1d31e24f-4905-4f72-a69b-0ea447d44f40')
+      vsphere_user     = credentials('vsphere_user')
+      vsphere_password = credentials('vsphere_password')
   }
   stages {
     stage('init') {
