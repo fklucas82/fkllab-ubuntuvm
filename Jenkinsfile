@@ -1,5 +1,8 @@
 pipeline {
   agent any
+  environment {
+      vsphere_user     = credentials('administrator@fkllab.local')
+  }
   stages {
     stage('init') {
       steps {
