@@ -23,12 +23,12 @@ data "vsphere_virtual_machine" "template" {
 }
 
 resource "vsphere_virtual_machine" "vm" {
-  name             = "fkl-tf-j01"
+  name             = "fkl-tf-j02"
   resource_pool_id = "${data.vsphere_resource_pool.pool.id}"
   datastore_id     = "${data.vsphere_datastore.datastore.id}"
   folder            = "Linux"
-  num_cpus = 2
-  memory   = 8192
+  num_cpus = 1
+  memory   = 1024
   guest_id = "${data.vsphere_virtual_machine.template.guest_id}"
 
 
@@ -72,7 +72,7 @@ resource "vsphere_virtual_machine" "vm" {
 
     customize {
       linux_options {
-        host_name = "fkl-tf-j01"
+        host_name = "fkl-tf-j02"
         domain    = "fkl-lab.int"
       }
       network_interface {}
